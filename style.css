@@ -1,3 +1,8 @@
+:root {
+    --background: #06283d;
+    --text-color: #fff;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +16,68 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #06283d;
+    background: var(--background);
 }
+
+body.light-mode {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9d7c2;
+}
+
+/* Mode toggle */
+
+.theme-button {
+    position: sticky;
+    margin-top: -100px;
+    margin-left: 100;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 80px;
+	height: 40px;
+	background: #f9d7c2;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #06283d;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 50px;
+}
+
+/* mode toggle end */
 
 .container {
     position: relative;

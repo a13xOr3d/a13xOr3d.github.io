@@ -4,6 +4,13 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
+//light-dark mode toggle
+const themeButton = document.getElementById('theme');
+
+themeButton.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+});
+
 search.addEventListener('click', () =>{
 
     const APIKey = '205864670a47bc06d9b2afdb5e9341dd';
