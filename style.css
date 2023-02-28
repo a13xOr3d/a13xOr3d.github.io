@@ -1,5 +1,5 @@
 :root {
-    --background: #06283d;
+    --background: #314260;
     --text-color: #fff;
   }
 
@@ -11,28 +11,44 @@
     box-sizing: border-box;
 }
 
-body {
+div.sidebar {
+    position: fixed;
+    background: #06283D;
+    box-shadow: 3px 0px 5px 2px #052336;
+    width: 20%;
+    min-width: 200px !important;
+    height: 100%;
+}
+
+div.sidebar.light-mode {
+    background: #53443A;
+    box-shadow: 3px 0px 5px 2px #867369;
+}
+
+div.weather-container {
+    margin-left: 20%;
     height: 100vh;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--background);
 }
 
-body.light-mode {
+div.weather-container.light-mode {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f9d7c2;
+    background: #FFE8D1;
 }
 
 /* Mode toggle */
 
 .theme-button {
-    position: sticky;
-    margin-top: -100px;
-    margin-left: 100;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 10px;
 }
 
 input[type=checkbox]{
@@ -44,9 +60,9 @@ input[type=checkbox]{
 label {
 	cursor: pointer;
 	text-indent: -9999px;
-	width: 80px;
-	height: 40px;
-	background: #f9d7c2;
+	width: 60px;
+	height: 30px;
+	background: #FFE8D1;
 	display: block;
 	border-radius: 100px;
 	position: relative;
@@ -57,15 +73,15 @@ label:after {
 	position: absolute;
 	top: 5px;
 	left: 5px;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	background: #fff;
 	border-radius: 90px;
 	transition: 0.3s;
 }
 
 input:checked + label {
-	background: #06283d;
+	background: #314260;
 }
 
 input:checked + label:after {
@@ -76,7 +92,6 @@ input:checked + label:after {
 label:active:after {
 	width: 50px;
 }
-
 /* mode toggle end */
 
 .container {
@@ -128,7 +143,7 @@ label:active:after {
 
 .search-box button:hover {
     color: #fff;
-    background: #06283d;
+    background: #314260;
 }
 
 .search-box i {

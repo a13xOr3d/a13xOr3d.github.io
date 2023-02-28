@@ -5,11 +5,20 @@ const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
 //light-dark mode toggle
-const themeButton = document.getElementById('theme');
+const themeButton = document.getElementById('theme'); //get input element by id 'theme'
+const weatherContainer = document.querySelector('.weather-container'); //get div element by id
+const sidebar = document.querySelector('.sidebar');
+//search button here
 
 themeButton.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
+    weatherContainer.classList.toggle('light-mode')
+    sidebar.classList.toggle('light-mode')
+    //searchbutton here
 });
+
+/*themeButton.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+});*/
 
 search.addEventListener('click', () =>{
 
